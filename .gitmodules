@@ -1,0 +1,3 @@
+[submodule "nbomed-core"]
+	path = nbomed-core
+	url = https://github.com/djfx229/nbomed-core.git
