@@ -60,22 +60,28 @@ void PlatformWindow::fillColor(RectPixels *rect, Color color) {
 }
 
 DWORD PlatformWindow::getValueForColor(Color color) {
+    unsigned long hexColor = 0x94d9f8;
     switch (color) {
         case COLOR_SCREEN_BACKGROUND:
-            return 0x94d9f8;
+            hexColor = 0x94d9f8;
+            break;
         case COLOR_TEXT_PLAIN:
-            return 0x000000;
+            hexColor = 0x000000;
+            break;
         case COLOR_TEXT_SELECTED:
-            return 0xbff9fc;
+            hexColor = 0xbff9fc;
+            break;
         case COLOR_TEXT_BACKGROUND:
-            return 0xeb6683;
+            hexColor = 0xeb6683;
+            break;
         case COLOR_RANDOM:
             int r = rand() % 256;
             int g = rand() % 256;
             int b = rand() % 256;
-            return static_cast<DWORD>((r << 16) | (g << 8) | b);
+            hexColor = static_cast<DWORD>((r << 16) | (g << 8) | b);
+            break;
     }
-    return 0x94d9f8;
+    return hexColor;
 }
 
 GridDimension* PlatformWindow::getGridDimension() const {
